@@ -58,3 +58,12 @@ func TestDefer(t *testing.T) {
 	panic("err")
 	fmt.Println("End")
 }
+
+func TestDefer2(t *testing.T) {
+	defer func() {
+		t.Log("Clear Resource.")
+	}()
+
+	t.Log("Start")
+	panic("err")
+}
